@@ -10,11 +10,11 @@
 		EF5CAC01283673E7006FCEB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5CAC00283673E7006FCEB8 /* AppDelegate.swift */; };
 		EF5CAC03283673E7006FCEB8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5CAC02283673E7006FCEB8 /* SceneDelegate.swift */; };
 		EF5CAC05283673E7006FCEB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5CAC04283673E7006FCEB8 /* ViewController.swift */; };
-		EF5CAC08283673E7006FCEB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF5CAC06283673E7006FCEB8 /* Main.storyboard */; };
 		EF5CAC0A283673E9006FCEB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF5CAC09283673E9006FCEB8 /* Assets.xcassets */; };
 		EF5CAC0D283673E9006FCEB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF5CAC0B283673E9006FCEB8 /* LaunchScreen.storyboard */; };
 		EFDB46CC2843EE8400AF4015 /* TextItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDB46CB2843EE8400AF4015 /* TextItem.swift */; };
 		EFDB46D12843EF8A00AF4015 /* TextItemCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDB46D02843EF8A00AF4015 /* TextItemCollectionCell.swift */; };
+		EFDB46D32843F3EA00AF4015 /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDB46D22843F3EA00AF4015 /* ApplicationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,12 +22,12 @@
 		EF5CAC00283673E7006FCEB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF5CAC02283673E7006FCEB8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EF5CAC04283673E7006FCEB8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EF5CAC07283673E7006FCEB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EF5CAC09283673E9006FCEB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF5CAC0C283673E9006FCEB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF5CAC0E283673E9006FCEB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFDB46CB2843EE8400AF4015 /* TextItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextItem.swift; sourceTree = "<group>"; };
 		EFDB46D02843EF8A00AF4015 /* TextItemCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextItemCollectionCell.swift; sourceTree = "<group>"; };
+		EFDB46D22843F3EA00AF4015 /* ApplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,6 @@
 			children = (
 				EF5CAC00283673E7006FCEB8 /* AppDelegate.swift */,
 				EF5CAC02283673E7006FCEB8 /* SceneDelegate.swift */,
-				EF5CAC06283673E7006FCEB8 /* Main.storyboard */,
 				EF5CAC09283673E9006FCEB8 /* Assets.xcassets */,
 				EF5CAC0B283673E9006FCEB8 /* LaunchScreen.storyboard */,
 				EF5CAC0E283673E9006FCEB8 /* Info.plist */,
@@ -92,6 +91,7 @@
 			children = (
 				EFDB46CF2843EEF700AF4015 /* View */,
 				EFDB46CA2843EE7100AF4015 /* Model */,
+				EFDB46D22843F3EA00AF4015 /* ApplicationController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -165,7 +165,6 @@
 			files = (
 				EF5CAC0D283673E9006FCEB8 /* LaunchScreen.storyboard in Resources */,
 				EF5CAC0A283673E9006FCEB8 /* Assets.xcassets in Resources */,
-				EF5CAC08283673E7006FCEB8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFDB46D32843F3EA00AF4015 /* ApplicationController.swift in Sources */,
 				EF5CAC05283673E7006FCEB8 /* ViewController.swift in Sources */,
 				EFDB46CC2843EE8400AF4015 /* TextItem.swift in Sources */,
 				EF5CAC01283673E7006FCEB8 /* AppDelegate.swift in Sources */,
@@ -187,14 +187,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EF5CAC06283673E7006FCEB8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EF5CAC07283673E7006FCEB8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EF5CAC0B283673E9006FCEB8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -325,13 +317,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExpandableCollection/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -341,6 +333,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vitalii.ExpandableCollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -352,13 +345,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExpandableCollection/Support/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -368,6 +361,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vitalii.ExpandableCollection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

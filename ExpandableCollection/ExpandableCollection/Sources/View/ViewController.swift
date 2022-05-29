@@ -9,11 +9,10 @@ import UIKit
 
 final class ViewController: UIViewController {
     
+    private let collectionViewLayout: UICollectionViewLayout
+    
     private lazy var listView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.estimatedItemSize = CGSize(width: UIScreen.main.bounds.width, height: 0)
-        let view = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        let view = UICollectionView(frame: CGRect.zero, collectionViewLayout: self.collectionViewLayout)
         view.register(TextItemCollectionCell.self, forCellWithReuseIdentifier: TextItemCollectionCell.description())
         view.dataSource = self
         view.delegate = self
@@ -25,7 +24,18 @@ final class ViewController: UIViewController {
     }()
     
     private var collapsedRows: [Int] = (0...21).map { $0 }
-
+    
+    init(withCollectionViewLayout layout: UICollectionViewLayout) {
+        self.collectionViewLayout = layout
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
