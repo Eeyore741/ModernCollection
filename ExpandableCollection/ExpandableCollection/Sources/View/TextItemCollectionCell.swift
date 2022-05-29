@@ -24,11 +24,6 @@ final class TextItemCollectionCell: UICollectionViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18)
         label.numberOfLines = 0
-//        label.lineBreakMode = .byTruncatingTail
-//        label.lineBreakStrategy = .hangulWordPriority
-//        label.allowsDefaultTighteningForTruncation = false
-//        label.baselineAdjustment = .alignCenters
-//        label.textAlignment = .left
         return label
     }()
     
@@ -50,24 +45,12 @@ final class TextItemCollectionCell: UICollectionViewCell {
         didSet {
             self.titleLabel.text = self.textItem?.title
             self.descrLabel.text = self.textItem?.descr
-            
-            self.setNeedsUpdateConstraints()
-            self.updateConstraintsIfNeeded()
         }
     }
     
     func setCollapsed(_ collapsed: Bool, animated: Bool) {
+        self.collapseConstraint.isActive = collapsed
         self.bottomConstraint.isActive = collapsed == false
-        let handler = {
-            self.collapseConstraint.isActive = collapsed
-            self.setNeedsLayout()
-            self.layoutIfNeeded()
-        }
-        if animated {
-            UIView.animate(withDuration: 0.3) { handler() }
-        } else {
-            handler()
-        }
     }
     
     override func updateConstraints() {
@@ -87,7 +70,7 @@ final class TextItemCollectionCell: UICollectionViewCell {
         self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(self.titleLabel)
         NSLayoutConstraint.activate([
-            self.titleLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor),
+            self.titleLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 18.0),
             self.titleLabel.leadingAnchor.constraint(equalTo: self.contentView.readableContentGuide.leadingAnchor),
             self.titleLabel.trailingAnchor.constraint(equalTo: self.contentView.readableContentGuide.trailingAnchor)
         ])
@@ -97,13 +80,14 @@ final class TextItemCollectionCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             self.descrLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor),
             self.descrLabel.leadingAnchor.constraint(equalTo: self.contentView.readableContentGuide.leadingAnchor),
-            self.descrLabel.trailingAnchor.constraint(equalTo: self.contentView.readableContentGuide.trailingAnchor),
-            self.bottomConstraint
+            self.descrLabel.trailingAnchor.constraint(equalTo: self.contentView.readableContentGuide.trailingAnchor)
         ])
+        
+        self.bottomConstraint.isActive = false
+        self.collapseConstraint.isActive = true
         
         self.contentView.backgroundColor = .white
         self.contentView.clipsToBounds = true
-        self.collapseConstraint.isActive = false
     }
     
     override func prepareForReuse() {

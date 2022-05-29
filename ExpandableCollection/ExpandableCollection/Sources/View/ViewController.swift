@@ -20,7 +20,7 @@ final class ViewController: UIViewController {
     }()
     
     private lazy var textItems: [TextItem] = {
-        (1...22).map { _ in TextItem.makeDummy() }
+        (1...22).map { TextItem.makeDummy(withPrefix: String($0)) }
     }()
     
     private var collapsedRows: [Int] = (0...21).map { $0 }
@@ -84,17 +84,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
             self.collapsedRows.append(indexPath.row)
             (collectionView.cellForItem(at: indexPath) as? TextItemCollectionCell)?.setCollapsed(true, animated: true)
         }
-        collectionView.performBatchUpdates { }
         
-//        collectionView.collectionViewLayout.invalidateLayout()
-//        UIView.animate(withDuration: 0.3) {
-//            collectionView.layoutIfNeeded()
-//        }
+        collectionView.collectionViewLayout.invalidateLayout()
     }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let cell = TextItemCollectionCell()
-//        cell.textItem = self.textItems[indexPath.row]
-//        let size = cell.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize, withHorizontalFittingPriority: UILayoutPriority.fittingSizeLevel, verticalFittingPriority: UILayoutPriority.required)
-//        return size
-//    }
 }
