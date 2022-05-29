@@ -12,8 +12,8 @@ struct TextItem {
     let title: String
     let descr: String
     
-    static func makeDummy() -> Self {
-        let title = String("asadasdklda".shuffled()).capitalized
+    static func makeDummy(withPrefix: String = "") -> Self {
+        let title = String("abcdefghijklmnopqrstuvwxyz".shuffled()).capitalized
         var descr = title
         
         var times = (3...5).randomElement()
@@ -21,6 +21,6 @@ struct TextItem {
             descr += descr
             times? -= 1
         }
-        return TextItem(title: title, descr: descr)
+        return TextItem(title: withPrefix + ". " + title, descr: descr)
     }
 }
